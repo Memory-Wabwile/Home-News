@@ -1,4 +1,4 @@
-{% extends 'base.html'% }
+{%extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
 <!DOCTYPE html>
@@ -14,14 +14,14 @@
 </head>
 
 <body>
-   { % block content %}
+   {% block content %}
     <h3> NEWS SOURCES</h3>
     <ul>
         {% for source in sources %}
         <li>{{ source.id}}</li>
         {% endfor %}
     </ul>
-    {% endblock %}
+    {% endblock%}
 </body>
 
 </html>
