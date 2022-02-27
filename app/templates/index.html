@@ -10,10 +10,10 @@
     </head>
 
     <body>
-        <h3> HEADLINES</h3>
+        <h3> NEWS SOURCES</h3>
         <ul>
-           {% for popular_movie in popular %}
-               <li>{{ headlines.author}}</li>
+           {% for source in sources %}
+               <li>{{ source.id}}</li>
            {% endfor %}
        </ul>
     </body>

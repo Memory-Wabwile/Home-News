@@ -10,6 +10,9 @@ apiKey = app.config['NEWS_API_KEY']
 #GEtting the article base url
 base_url = app.config["NEWS_API_BASE_URL"]
 
+# getting source ase url
+base_url_source = app.config['NEWS_API_SOURCE_URL']
+
 def get_articles ():
     '''
     Function that gets the json response to our url request
