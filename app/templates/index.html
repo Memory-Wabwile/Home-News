@@ -1,3 +1,5 @@
+{% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,9 +14,7 @@
     <body>
         <h3> NEWS SOURCES</h3>
         <ul>
-           {% for source in sources %}
-               <li>{{ source.id}}</li>
-           {% endfor %}
+         {{macro.displaySources(sources)}}
        </ul>
     </body>
 </html>
