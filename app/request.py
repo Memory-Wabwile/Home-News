@@ -74,12 +74,12 @@ def get_articles (id):
     return article_results
 
 
-def process_results(article_list):
+def process_results(articles_list):
     '''
      Function  that processes the articles result and transform them to a list of Objects
     '''
     article_list = []
-    for article in article_list:
+    for article in articles_list:
        author = article.get('author')
        title = article.get('title')
        description = article.get('description')
@@ -94,3 +94,22 @@ def process_results(article_list):
            article_list.append(article_item)
 
     return article_list
+
+
+def get_headlines():
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_headlines_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(apiKey)
+
+    with urllib.request.urlopen(get_headlines_url) as url:
+        get_headlines_data = url.read()
+        get_headlines_response = json.loads(get_headlines_data)
+
+        get_headlines_results = None
+
+        if get_headlines_response['articles']:
+            get_headlines_list = get_headlines_response['articles']
+            get_headlines_results = process_results(get_headlines_list)
+
+    return get_headlines_results
