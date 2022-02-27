@@ -1,1 +1,31 @@
-<h1> Hello News {{ id }} </h1>
+{%extends 'base.html'%}
+<body>
+    {%block content%}
+        <h1 style = "text-align: center;"  class = "text-capitalize"> {{id}}</h1>
+
+        <div class="container">
+            <div class="row">
+                {%for article in articles}
+
+
+                <div class="card">
+                    <img src="{{article.image}}" alt="">
+                    <div class="card-body">
+                        <h4>{{article.author}}</h4>
+                        <p>{{article.description}}</p>
+                        <p>{{article.publishedAt | date}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{article.url}}">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+
+                </div>
+
+                {%endfor%}
+            </div>
+        </div>
+    {%endblock%} 
+</body>
+
