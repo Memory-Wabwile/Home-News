@@ -5,6 +5,7 @@ from .models import sources
 
 
 Article = article.Article
+Source = sources.Source
 
 #Getting api key
 apiKey = app.config['NEWS_API_KEY'] 
@@ -16,7 +17,7 @@ base_url = app.config["NEWS_API_BASE_URL"]
 base_url_source = app.config['NEWS_API_SOURCE_URL']
 
 
-def get_source ():
+def get_source():
     '''
     Function that gets the json response to our url request
     '''
@@ -30,7 +31,7 @@ def get_source ():
 
         if get_sources_response['sources']:
             source_results_list = get_sources_response['sources']
-            source_results = process_results(source_results_list)
+            source_results = process_source_results(source_results_list)
 
     return source_results
 
@@ -40,7 +41,7 @@ def process_source_results(sources_list):
      Function  that processes the articles result and transform them to a list of Objects
     '''
     source_list = []
-    for source in source_list:
+    for source in sources_list:
        id = source.get('id')
        name = source.get('name')
        description = source.get('description')
