@@ -14,11 +14,11 @@ def index():
     return render_template('index.html' , title=title , sources = sources , headlines = headlines)
 
 
-@app.route('/article/<int:id>')
+@app.route('/article/<id>')
 def article(id):
     '''
     view news and returns the news details
     '''
-    articles = get_articles()
+    articles = get_articles(id)
     return render_template('article.html' , articles = articles , id=id)
         

@@ -14,13 +14,47 @@
 </head>
 
 <body>
-   {% block content %}
-    <h3> NEWS SOURCES</h3>
-    <ul>
-        {% for source in sources %}
-        <li>{{ source.id}}</li>
-        {% endfor %}
-    </ul>
+    {% block content %}
+    <!-- <div class="row"> -->
+    <div class="c0l-md-4">
+        .
+        <h3> NEWS SOURCES</h3>
+        <ul>
+            {% for source in sources %}
+            <a href="/article/{{source.id}}">
+                <p>{{ source.id}}</p>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col-md-8">
+        <div class="container">
+            <h1 style="text-align: center;">HEADLINES</h1>
+
+            <div class="row">
+                {%for headlines in headlines%}
+                <div style=" padding:10px;width: 40%; border: 2px solid grey; box-shadow: 5px 5px 10px rgb(94, 86, 86);"
+                    class="card">
+                    <img src="{{headlines.urlToImage}}" alt="" width="80%" height="250">
+                    <div class="card-body">
+                        <h3>{{headlines.author}}</h3>
+                        <p>{{headlines.description}}</p>
+                        <p>{{headlines.publishedAt}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{headlines.url}}">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
     {% endblock%}
 </body>
 

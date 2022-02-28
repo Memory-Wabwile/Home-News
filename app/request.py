@@ -2,6 +2,7 @@ from app import app
 import urllib.request,json
 from .models import article
 from .models import sources
+from .models import headlines
 
 
 Article = article.Article
@@ -59,7 +60,7 @@ def get_articles (id):
     '''
     Function that gets the json response to our url request
     '''
-    get_articles_url = base_url.format(id,apiKey)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,apiKey)
 
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -67,8 +68,8 @@ def get_articles (id):
 
         article_results = None
 
-        if get_articles_response['results']:
-            article_results_list = get_articles_response['results']
+        if get_articles_response['articles']:
+            article_results_list = get_articles_response['articles']
             article_results = process_results(article_results_list)
 
     return article_results
@@ -90,7 +91,7 @@ def process_results(articles_list):
        
 
        if url:
-           article_item = Article(author , title , description , publishedAt , content ,url ,urlToImage)
+           article_item = Article(author , title , description , publishedAt , content ,url ,image)
            article_list.append(article_item)
 
     return article_list
@@ -113,3 +114,24 @@ def get_headlines():
             get_headlines_results = process_results(get_headlines_list)
 
     return get_headlines_results
+
+
+def get_category(catgory):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_category_url = base_url.format(catgory,apiKey)
+
+    with urllib.request.urlopen(get_category_url) as url :
+        get_category_data = url.read()
+        get_category_response = json.loads(get_category_data)
+
+        get_category_results = None
+
+        if get_category_response['articles']:
+            get_category_list = get_articles_response['articles']
+            get_category_results = process_results(get_category_list)
+
+    return get_category_results
+
+

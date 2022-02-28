@@ -1,7 +1,8 @@
-class Headlines:
+class Category
     '''
-    Headlines class to define the headlines objects
+     Headlines class to define the headlines objects
     '''
+       
     def __init__(self , author , title , description , publishedAt , content , url , urlToImage  ):
         self.author = author
         self.title = title
