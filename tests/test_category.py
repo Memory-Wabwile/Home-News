@@ -1,10 +1,10 @@
 import unittest
-from models import category
+from app.models import Category
                                                                                                                                                                                                                                                                                                                                                          # author , title , description , publishedAt , content , url , urlToImage 
-    class CategoryTest(unittest.TestCase):
-        '''
-        Test Class to test the behaviour of the articles class
-        '''
+class CategoryTest(unittest.TestCase):
+    '''
+    Test Class to test the behaviour of the articles class
+    '''
     
     
     def setUp(self):
@@ -21,3 +21,6 @@ from models import category
         '''
         self.assertTrue(isinstance(self.new_category,Category))
         
+
+# if __name__ == '__main__':
+#     unittest.main()

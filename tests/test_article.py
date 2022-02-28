@@ -1,6 +1,6 @@
 import unittest
-from models import article
-Article = article.Article
+from app.models import Article
+
 
 class ArticleTest(unittest.TestCase):
     '''
@@ -18,5 +18,5 @@ class ArticleTest(unittest.TestCase):
         '''
         self.assertTrue(isinstance(self.new_article,Article))
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()

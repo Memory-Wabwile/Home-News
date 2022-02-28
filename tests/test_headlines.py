@@ -1,5 +1,5 @@
 import unittest
-from models import headlines
+from app.models import Headlines
 
 
 class HeadlinesTest(unittest.TestCase):
@@ -18,3 +18,7 @@ class HeadlinesTest(unittest.TestCase):
         method to check if news source is an instance of the article class
         '''
         self.assertTrue(isinstance(self.new_headlines,Headlines))
+
+
+# if __name__ == '__main__':
+#     unittest.main()

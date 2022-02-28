@@ -1,5 +1,5 @@
 import unittest
-from models import sources
+from app.models import Source
 
 class SourceTest(unittest.TestCase):
     '''
@@ -18,3 +18,7 @@ class SourceTest(unittest.TestCase):
         method to check if news source is an instance of the article class
         '''
         self.assertTrue(isinstance(self.news_source, Source))
+
+
+# if __name__ == '__main__':
+#     unittest.main()
