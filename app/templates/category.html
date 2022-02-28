@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+<br>
+
+<body>
+    {%block content%}
+    <h1 class="text-uppercase">{{catgory}}</h1>
+
+    <div class="container">
+        {%for category in category%}
+        <div style=" padding:10px;width: 40%; border: 2px solid grey; box-shadow: 5px 5px 10px rgb(94, 86, 86);"
+            class="card">
+            <img src="{{category.urlToImage}}" alt="" width="80%" height="250">
+            <div class="card-body">
+                <h3>{{category.author}}</h3>
+                <p>{{category.description}}</p>
+                <p>{{category.publishedAt}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{category.url}}">
+                    <button>Read More</button>
+                </a>
+            </div>
+
+        </div>
+        {%endfor%}
+    </div>
+    {%endblock%}
+</body>

@@ -116,11 +116,11 @@ def get_headlines():
     return get_headlines_results
 
 
-def get_category(catgory):
+def get_category(category_name):
     '''
     Function that gets the json response to our url request
     '''
-    get_category_url = base_url.format(catgory,apiKey)
+    get_category_url = base_url.format(category_name,apiKey)
 
     with urllib.request.urlopen(get_category_url) as url :
         get_category_data = url.read()
@@ -129,7 +129,7 @@ def get_category(catgory):
         get_category_results = None
 
         if get_category_response['articles']:
-            get_category_list = get_articles_response['articles']
+            get_category_list = get_category_response['articles']
             get_category_results = process_results(get_category_list)
 
     return get_category_results

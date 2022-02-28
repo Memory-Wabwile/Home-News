@@ -20,3 +20,4 @@ from models import category
         method to check if news source is an instance of the article class
         '''
         self.assertTrue(isinstance(self.new_category,Category))
+        
