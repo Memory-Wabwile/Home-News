@@ -7,6 +7,10 @@ Memory Wabwile<br>
 ## Description
 Home news is an application that displays news highlights and various sources of news on the home page and also different categories of news such as sports , entertainment etc. It's designed to help people who get home late and are not able to watch news on time. 
 
+
+## Live Site
+click on https://homeofnews.herokuapp.com/  to view the site
+
 ## BDD
 
 1. A user is able to select a news source from the home page and it directs them to the specific news source main page.<br>
