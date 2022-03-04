@@ -5,7 +5,7 @@ Memory Wabwile<br>
  https://github.com/Memory-Wabwile
 
 ## Description
-Home news is an application that displays news highlights and various sources of news on the home page and also different categories of news such as sports , entertainment etc. It's designed to help people who get home late and are not able to watch news on time. 
+Home news is an application that displays news highlights and various sources of news on the home page and also different categories of news such as sports , entertainment etc. It's designed to help people who get home late and are not able to watch news on time. The site uses the NEWS API to fetch data
 
 
 ## Live Site
